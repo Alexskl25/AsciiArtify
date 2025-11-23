@@ -115,14 +115,29 @@ k3d cluster create asciiartify --servers 1 --agents 1 --wait
 kubectl get nodes
 ```
 
-3. Apply a minimal `Hello World` deployment and service (file: `hello-deploy.yaml`):
+3. Prepare you basic container application
+```Dockerfile
+FROM nginx:alpine
+COPY index.html /usr/share/nginx/html/index.html
+```
+```html
+Hello from AsciiArtify PoC!
+```
+```bash
+# Build locally
+docker build -t hello-world:local .
+```
+
+4. Apply a minimal `Hello World` deployment and service (file: `hello-deploy.yaml`):
 ```yaml
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: hello
+  name: hello-deployment
+  labels:
+    app: hello
 spec:
-  replicas: 2
+  replicas: 1
   selector:
     matchLabels:
       app: hello
@@ -132,36 +147,37 @@ spec:
         app: hello
     spec:
       containers:
-      - name: hello
-        image: hashicorp/http-echo:0.2.3
-        args:
-          - "-text=Hello from AsciiArtify PoC!"
-        ports:
-        - containerPort: 5678
+        - name: hello
+          image: hello-world:local
+          ports:
+            - containerPort: 80
 ---
 apiVersion: v1
 kind: Service
 metadata:
-  name: hello-svc
+  name: hello-service
+  labels:
+    app: hello
 spec:
+  type: ClusterIP
   selector:
     app: hello
   ports:
-  - protocol: TCP
-    port: 80
-    targetPort: 5678
-  type: NodePort
+    - port: 80
+      targetPort: 80
 ```
 
-Apply & test:
+Apply & local test:
 ```bash
+# Import into k3d
+k3d image import hello-world:local --cluster asciiartify
 kubectl apply -f hello-deploy.yaml
 kubectl get pods -l app=hello
-kubectl port-forward svc/hello-svc 8080:80 &
+kubectl port-forward svc/hello-service 8080:80 &
 curl http://127.0.0.1:8080/  # should return "Hello from AsciiArtify PoC!"
 ```
 
-4. Cleanup:
+5. Cleanup:
 ```bash
 k3d cluster delete asciiartify
 ```
