@@ -116,13 +116,16 @@ kubectl get nodes
 ```
 
 3. Prepare you basic container application
+**Create Dockerfile**
 ```Dockerfile
 FROM nginx:alpine
 COPY index.html /usr/share/nginx/html/index.html
 ```
+**Create index.html**
 ```html
 Hello from AsciiArtify PoC!
 ```
+**Build docker image**
 ```bash
 # Build locally
 docker build -t hello-world:local .
