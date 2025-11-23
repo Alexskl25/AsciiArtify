@@ -1,13 +1,8 @@
 # AsciiArtify — Local Kubernetes for PoC
 
-**File:** `doc/Concept.md`
-**Branch:** `main`
-
----
-
 ## Executive summary
 
-AsciiArtify is a small startup building an ML-powered image→ASCII-art service. For a quick, repeatable PoC and local development workflow we compared three popular local Kubernetes options: **minikube**, **kind** and **k3d**. This document summarizes the comparison, highlights licensing/runtime risks around Docker Desktop, shows a recommended quick demo (k3d `Hello World`) and gives a clear recommendation for which tool to use where.
+AsciiArtify is a small startup building an ML-powered image to ASCII-art service. For a quick, repeatable PoC and local development workflow, here we compared three popular local Kubernetes options: **minikube**, **kind** and **k3d**. This document summarizes the comparison, highlights licensing/runtime risks around Docker Desktop, shows a recommended quick demo (k3d `Hello World`) and gives a clear recommendation for which tool to use where.
 
 ---
 
@@ -35,7 +30,7 @@ AsciiArtify is a small startup building an ML-powered image→ASCII-art service.
 ## 2. Characteristics
 
 - **Supported OS / Architectures**
-  - **minikube**: Linux, macOS, Windows — supports x86_64 and ARM variants depending on driver.
+  - **minikube**: Linux, macOS, Windows — supports x86_64 and ARM variants depending on a driver.
   - **kind**: Linux, macOS, Windows (requires a container runtime) — supports x86_64 and ARM where the runtime/containers are available.
   - **k3d**: Linux, macOS, Windows (Docker required) — supports x86_64 and ARM through k3s.
 
@@ -68,7 +63,10 @@ AsciiArtify is a small startup building an ML-powered image→ASCII-art service.
 | Best for CI | No | Yes | Yes |
 | Best for local PoC | Yes | Good | Best |
 
-> Note: The table is a summary. Each project evolves — check official docs for the most current options for Podman, Windows and ARM.
+> | Official links to the docs pages: |
+> | [https://minikube.sigs.k8s.io/docs/](https://minikube.sigs.k8s.io/docs/) |
+> | [https://kind.sigs.k8s.io/](https://kind.sigs.k8s.io/) |
+> | [https://k3d.io/stable/](https://k3d.io/stable/) |
 
 ---
 
@@ -93,6 +91,8 @@ AsciiArtify is a small startup building an ML-powered image→ASCII-art service.
 - **Docker Desktop** licensing changed for some commercial scenarios and some organizations opt to avoid Docker Desktop for proprietary-license concerns. For small personal use it is usually fine, but for companies you should review Docker's license terms.
 
 - **Mitigation**: Use **Podman** (open, upstream-friendly) or run Docker Engine on Linux hosts (no Desktop). `minikube` and `kind` have documented ways to use Podman, but expect some extra configuration (rootless cgroups, networking differences).
+
+> The primary Docker licensing risk stems from the 2021 update that requires a paid subscription for commercial use in large enterprises (over 250 employees or $10 million in annual revenue)
 
 ---
 
@@ -166,20 +166,11 @@ curl http://127.0.0.1:8080/  # should return "Hello from AsciiArtify PoC!"
 k3d cluster delete asciiartify
 ```
 
-> For CI-focused demos, replace k3d with kind and embed cluster creation inside a job (GitHub Actions/GitLab CI). A minimal `kind` job will `kind create cluster` → `kubectl apply` → `kind delete cluster`.
+> It is easy to replace k3d with kind for CI-focused demos.
 
 ---
 
-## 7. Embedded demo & references
-
-- Example `demo` style: see project `wagoodman/dive` for demo structure and repo layout conventions.
-- Example comparison table style: see `den-vasyliev/SRE-Competency-Matrix` for a clean markdown table style and layout.
-
-(These examples are referenced as layout inspiration only — the content and commands here are tailored for AsciiArtify.)
-
----
-
-## 8. Recommendations and next steps for AsciiArtify
+## 7. Recommendations and next steps for AsciiArtify
 
 1. **Local PoC**: use **k3d** for day-to-day PoC and local acceptance testing (fast cycles, minimal resources).
 2. **CI**: use **kind** in GitHub Actions for reproducible integration tests.
@@ -189,7 +180,7 @@ k3d cluster delete asciiartify
 
 ---
 
-## 9. Appendix — quick checklist to prepare PoC
+## 8. Appendix — quick checklist to prepare PoC
 
 - [ ] Choose runtime (Docker or Podman)
 - [ ] Create `demo/hello-deploy.yaml`
