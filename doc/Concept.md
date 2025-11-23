@@ -116,6 +116,7 @@ kubectl get nodes
 ```
 
 3. Prepare you basic container application
+
 **Create Dockerfile**
 ```Dockerfile
 FROM nginx:alpine
@@ -210,3 +211,4 @@ k3d cluster delete asciiartify
 ---
 
 *End of Concept.md*
+
