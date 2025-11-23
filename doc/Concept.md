@@ -100,7 +100,7 @@ AsciiArtify is a small startup building an ML-powered image to ASCII-art service
 
 This short demo demonstrates a full PoC lifecycle: create cluster → deploy a small service → test → destroy. Replace `docker` with your chosen runtime if needed.
 
-[![Hello World Demo](https://raw.githubusercontent.com/Alexskl25/AsciiArtify/main/.data/demo.gif)](https://asciinema.org/a/p0wTyacilZOT88ZeVyHNzIaFu)
+[![Hello World Demo](https://raw.githubusercontent.com/Alexskl25/AsciiArtify/main/.data/demo.gif)](https://asciinema.org/a/pZvXeaiQmRDqHpbSXoTmCASxP)
 
 1. Install k3d (example):
 ```bash
@@ -209,4 +209,5 @@ k3d cluster delete asciiartify
 - [ ] Add `Makefile` targets: `make cluster-up`, `make deploy`, `make test`, `make cluster-down`
 - [ ] Add GitHub Actions workflow that uses `kind` for CI tests
 - [ ] Add README with developer quickstart
+
 
