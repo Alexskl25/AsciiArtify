@@ -77,6 +77,9 @@ This is your **ArgoCD admin password.**
 ---
 
 ## Step 7: Access the ArgoCD UI (GUI PART)
+
+![ArgoCD Login Page](https://raw.githubusercontent.com/Alexskl25/AsciiArtify/main/.data/Argo_login.PNG)
+
 Open your browser and go to:
 ```sh
 https://localhost:8080
@@ -88,5 +91,7 @@ Log in with:
 ---
 
 ## Now ArgoCD is Ready for MVP check out next step in **[doc/MVP.md](./doc/MVP.md)**
+
+![ArgoCD Login Page](https://raw.githubusercontent.com/Alexskl25/AsciiArtify/main/.data/ArgoCD_index.PNG)
 
 ---
