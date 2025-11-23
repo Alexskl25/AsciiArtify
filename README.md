@@ -4,6 +4,12 @@ AsciiArtify is a startup project that transforms images into ASCII art using **M
 
 ---
 
+## Deployment of ArgoCD on k3d
+
+This section explains how to deploy **ArgoCD** on a lightweight **k3d (K3s)** Kubernetes cluster for proof-of-concept purposes.
+
+[doc/POC.md](./doc/POC.md)
+
 ## Concept Document
 
 The detailed concept and comparative analysis of local Kubernetes development tools is available in:
