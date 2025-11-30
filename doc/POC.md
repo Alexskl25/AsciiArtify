@@ -14,7 +14,13 @@ Before starting, make sure you have:
 - A working shell environment
 
 ---
+## Recording from terminal:
 
+[![Deploying ArgoCD on k3d](https://raw.githubusercontent.com/Alexskl25/AsciiArtify/main/.data/demoArgoCDDeploy.gif)](https://asciinema.org/a/oGGU7ZtkH4CjkxejlUyoMR3Xe)
+
+---
+
+## Step by step *instruction*:
 ## Step 0: Create an alias for kubectl (optional)
 
 ```sh
