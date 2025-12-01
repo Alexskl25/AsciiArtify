@@ -6,6 +6,11 @@ AsciiArtify demonstrating an automated service that converts images into ASCII a
 ### Demo
 The repository includes an embedded demo showcasing the functionality of the **AsciiArtify** product deployed on the infrastructure.
 
+Forked from **den-vasyliev/go-demo-app**
+```
+https://github.com/Alexskl25/go-demo-app
+```
+
 ---
 
 ### *Click on the GIF* to download a video of the DEMO AsciiArtify runing on the k3d + ArgoCD
