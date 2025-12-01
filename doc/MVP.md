@@ -18,7 +18,7 @@ The repository includes an embedded demo showcasing the functionality of the **A
 
 The detailed concept and comparative analysis of local Kubernetes development tools is available in:
 
-[doc/Concept.md](./doc/Concept.md)
+[doc/Concept.md](./Concept.md)
 
 It includes:
 
@@ -31,4 +31,4 @@ It includes:
 
 This section explains how to deploy **ArgoCD** on a lightweight **k3d (K3s)** Kubernetes cluster for proof-of-concept purposes.
 
-[doc/POC.md](./doc/POC.md)
+[doc/POC.md](./POC.md)
