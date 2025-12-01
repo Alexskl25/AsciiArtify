@@ -1,7 +1,7 @@
 # AsciiArtify Live demo
 
 ### Description
-AsciiArtify is a minimal viable product (MVP) demonstrating an automated service that converts images into ASCII art. The demo includes an example input, the generated ASCII output, and instructions on how to run the service within the deployed environment.
+AsciiArtify demonstrating an automated service that converts images into ASCII art. The demo includes an example input, the generated ASCII output, and instructions on how to run the service within the deployed environment.
 
 ### Demo
 The repository includes an embedded demo showcasing the functionality of the **AsciiArtify** product deployed on the infrastructure.
