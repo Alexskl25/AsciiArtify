@@ -96,7 +96,7 @@ Log in with:
 
 ---
 
-## Now ArgoCD is Ready for MVP check out next step in **[doc/MVP.md](./doc/MVP.md)**
+## Now ArgoCD is Ready for MVP check out next step in **[doc/MVP.md](./MVP.md)**
 
 ![ArgoCD Login Page](https://raw.githubusercontent.com/Alexskl25/AsciiArtify/main/.data/ArgoCD_index.PNG)
 
