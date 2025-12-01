@@ -4,6 +4,11 @@
 
 AsciiArtify is a small startup building an ML-powered image to ASCII-art service. For a quick, repeatable PoC and local development workflow, here we compared three popular local Kubernetes options: **minikube**, **kind** and **k3d**. This document summarizes the comparison, highlights licensing/runtime risks around Docker Desktop, shows a recommended quick demo (k3d `Hello World`) and gives a clear recommendation for which tool to use where.
 
+forked from den-vasyliev/go-demo-app
+```
+https://github.com/Alexskl25/go-demo-app
+```
+
 ---
 
 ## Table of contents
@@ -209,5 +214,6 @@ k3d cluster delete asciiartify
 - [ ] Add `Makefile` targets: `make cluster-up`, `make deploy`, `make test`, `make cluster-down`
 - [ ] Add GitHub Actions workflow that uses `kind` for CI tests
 - [ ] Add README with developer quickstart
+
 
 
