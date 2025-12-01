@@ -8,9 +8,9 @@ The repository includes an embedded demo showcasing the functionality of the **A
 
 ---
 
-### *Click on the image* to play video of the AsciiArtify runing on the k3d + ArgoCD
+### *Click on the GIF* to download a video of the DEMO AsciiArtify runing on the k3d + ArgoCD
 
-[![Demo video](https://github.com/Alexskl25/AsciiArtify/blob/main/.data/DemoOfArgoCD.JPG)](https://github.com/Alexskl25/AsciiArtify/blob/main/.data/DemoOfArgoCD.mp4)
+[![Demo video](https://github.com/Alexskl25/AsciiArtify/blob/main/.data/DemoOfArgoCD.gif)](https://github.com/Alexskl25/AsciiArtify/blob/main/.data/DemoOfArgoCD.mp4)
 
 ## More to check out:
 
